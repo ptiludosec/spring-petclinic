@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    uses: ./.github/workflows/build-template.yml
+    with:
+      image_name: mon-app
+    secrets: inherit
